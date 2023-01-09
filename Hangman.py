@@ -13,12 +13,12 @@ print('Hello, and welcome to my Hangman game')
 print('There are 6 subjects to choose from: flowers, gems, states, colors, apps, and countries.')
 import random
 og_input = str(input ("Please enter a subject to begin : "))
-countries = ["Germany", "Jamaica", "Canada", "America", "Japan"]
-flowers = ["Rose", "Daisy", "Sunflower", "Tulip", "Lily"]
-gems = ["Diamond", "Emerald", "Pearl", "Ruby", "Opal"]
-states = ["Arizona", "California", "Montana", "Nevada", "Hawaii"]
-colors = ["Green", "Blue", "Yellow", "Pink", "Black"]
-apps = ["Tik Tok", "Facebook", "Instagram", "Twitter", "LinkedIn"]
+countries = ["germany", "jamaica", "canada", "america", "japan"]
+flowers = ["rose", "daisy", "sunflower", "tulip", "lily"]
+gems = ["diamond", "emerald", "pearl", "ruby", "opal"]
+states = ["arizona", "california", "montana", "nevada", "hawaii"]
+colors = ["green", "blue", "yellow", "pink", "black"]
+apps = ["tiktok", "facebook", "instagram", "twitter", "linkedIn"]
 
 categories = ['countries', 'flowers', 'gems', 'states', 'colors', 'apps']
 
@@ -31,15 +31,52 @@ fourth_pick = random.choice(states)
 fifth_pick = random.choice(colors)
 sixth_pick = random.choice(apps)
 def hangman():
-    if og_input == 'countries':
-        new_countries = []
-        countries_choice  = first_pick
-        return countries_choice
+    
         
-        countries_word = list(countries_choice)
-        # countries_letter = str(input('Please enter a letter: '))
-        # if countries_letter in countries_word:
-        #         print('correct!')
+  
+    if og_input == 'countries':
+        countries_copy = og_input
+        countries_choice  = first_pick
+        new_countries = list(countries_copy)
+        empty_countries = list()
+        countries_word = countries_choice
+        letter = str(input('Please enter a letter: '))
+
+
+        while letter in countries_word:
+            in_word = str(letter)
+            updated = str((input('Please enter your next letter: ')))
+            also_in_word = updated
+            countries_word_updated = countries_word.replace(also_in_word, in_word)
+            empty_countries.append(countries_word_updated)
+            print(empty_countries)
+            #return(countries_word)
+
+            
+            print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining')    
+            while countries_word_updated in empty_countries:
+                
+                
+                #print('correct!')
+                new = str((input('Please enter your next letter: ')))
+                also_in_word = new 
+                countries_word_updated = empty_countries.replace(also_in_word, in_word)
+                empty_countries.append(countries_word_updated)
+                print(empty_countries)
+                #return(countries_word)
+
+                print('Sorry, wrong guess! The head has been drawn! You have 4 attempts remaining')
+            # while letter in countries_word
+            #     print('Please choose another letter: ')
+            #     while letter in countries_word:
+            #         print('correct!')
+            # print('Sorry, wrong guess!')
+        
+
+            #return(blist)
+        
+        return countries_choice
+hangman()
 
 
     elif og_input == 'flowers':
