@@ -2,8 +2,8 @@
 #if correct if will be listed (in a list?)
 #if not correct, will be marked as wrong
 #six chances, if wrong will be told as such,(if elif else?)
-#how do I get the word list to guess from? (ask player to pick a subject and have a list of words ready)
-#enter different word list and can maybe pick at random (import random function)
+#how do I get the word list to guess from? (ask player to pick a subject and have a list of words ready) x
+#enter different word list and can maybe pick at random (import random function) x
 #how to represent the hanging man..just list parts of body struck and turns left?
 
 
@@ -58,6 +58,10 @@ hangman()
 #1/8 - 17:00 - printing every category 
 
 #work on - print one category, correct one, 
+
+#1/9 - 02:21 - set up to print category
+#work on - 
+
 	
 
 
