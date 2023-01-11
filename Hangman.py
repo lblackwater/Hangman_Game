@@ -34,145 +34,83 @@ def hangman():
     
         
   
-    if og_input == 'countries':
+    while og_input == 'countries':
         countries_copy = og_input
         countries_choice  = first_pick
-        new_countries = list(countries_copy)
         empty_countries = []
-        countries_word = countries_choice
+        pick_copy = countries_choice
+        countries_list = str(list(pick_copy))
+        
+
+        
+
         letter = str(input('Please enter a letter: '))
-
-        
-        while letter in countries_word:
-            
-            in_word = letter
+        new_temp = letter
+        while new_temp in countries_list:
+            print('correct!')                                       
+            countries_word_updated = countries_list.replace(' ', new_temp)
+            empty_countries.append(countries_word_updated)
+            print(empty_countries)
             updated = input('Please enter your next letter: ')
-            also_in_word = updated
-            if in_word == letter:
-                print('correct!')
-                countries_word_updated = countries_word.replace(' ', also_in_word)
-                empty_countries.append(countries_word_updated)
-                print(empty_countries)
-            #return(countries_word)
-                continue
-            else:
-                print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining') 
-                
-            
-               
-        while updated in countries_word:  
-                                                          
             temp = updated
-            new = input('Please enter your next letter: ')
-            temp1 = new 
-            if new == updated:
+            else temp in countries_list:
                 print('correct!')
-                countries_word_updated = countries_word.replace(' ', temp1)
+                countries_word_updated = countries_list.replace(' ', temp)
                 empty_countries.append(countries_word_updated)
                 print(empty_countries)
-                print('Sorry, wrong guess! The body has been drawn! You have 4 attempts remaining')
-                #return(countries_word)
-                continue
-            else:
-                print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining') 
-            
-                
-        
-        while updated in countries_word:
-                                        
-            temp2 = updated
-            new2 = input('Please enter your next letter: ')
-            also_in_word = new2
-            if new2 == updated:
-                print('correct!')
-                countries_word_updated = empty_countries.replace(' ', also_in_word)
-                empty_countries.append(countries_word_updated)
-                print(empty_countries)
-                print('Sorry, wrong guess! The left arm has been drawn! You have 3 attempts remaining')    
-                    #return(countries_word)
-                continue
-            else:
-                print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining')
-                
-        while updated in countries_word:
-             
-            temp3 = updated
-            new3 = input('Please enter your next letter: ')
-            also_in_word2 = new 
-            if new3 == updated:
-                print('correct!')
-                countries_word_updated = empty_countries.replace(' ', also_in_word2)
-                empty_countries.append(countries_word_updated)
-                print(empty_countries)
-                print('Sorry, wrong guess! The right arm has been drawn! You have 2 attempts remaining')
-                continue
-            else:
-                print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining')
+                updated = input('Please enter your next letter: ')
+                temp2 = updated
+                else temp2 in countries_list:
+                    print('correct!')
+                    countries_word_updated = countries_list.replace(' ', temp2)
+                    empty_countries.append(countries_word_updated)
+                    print(empty_countries)
+                    updated = input('Please enter your next letter: ')
+                    temp3 = updated
+                    else temp3 in countries_list:
+                        print('correct!')
+                        countries_word_updated = countries_list.replace(' ', temp3)
+                        empty_countries.append(countries_word_updated)
+                        print(empty_countries)
+                        updated = input('Please enter your next letter: ')
+                        temp4 = updated
+                        else temp4 in countries_list:
+                            print('correct!')
+                            countries_word_updated = countries_list.replace(' ', temp4)
+                            empty_countries.append(countries_word_updated)
+                            print(empty_countries)
+                            updated = input('Please enter your next letter: ')
+                            temp5 = updated
+                            else temp5 in countries_list:
+                                print('correct!')             
+                                countries_word_updated = countries_list.replace(' ', temp5)
+                                empty_countries.append(countries_word_updated)
+                                print(empty_countries)
+                                updated = input('Please enter your next letter: ') 
+                                temp6 = updated
+                                else temp6 in countries_list:    
+                                    print('correct!')
+                                    countries_word_updated = countries_list.replace(' ', temp6)
+                                    empty_countries.append(countries_word_updated)
+                                    print(empty_countries)
+                                    break                           
+                                print('Sorry, you are out of guesses!')
+                                
+                            print('Sorry, wrong guess! The left leg has been drawn! You have 1 attempts remaining')                            
+                            
+                        print('Sorry, wrong guess! The right leg has been drawn! You have 1 attempts remaining')                                           
                         
-        while updated in countries_word:
-            
-            temp4 = updated
-            new4 = input('Please enter your next letter: ')
-            also_in_word3 = new 
-            if new4 == updated:
-                print('correct!')
-                countries_word_updated = empty_countries.replace(' ', also_in_word3)
-                empty_countries.append(countries_word_updated)
-                print(empty_countries)
-                print('Sorry, wrong guess! The right leg has been drawn! You have 1 attempts remaining')
-                continue
-            else:
-                print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining')
-                           
-        while updated in countries_word:
-            
-            temp5 = updated
-            new5 = input('Please enter your next letter: ')
-            also_in_word4 = new 
-            if new5 == updated:
-                print('correct!')
-                countries_word_updated = empty_countries.replace(' ', also_in_word4)
-                empty_countries.append(countries_word_updated)
-                print(empty_countries)
-                print('Sorry, wrong guess! The left leg has been drawn! You have 1 attempts remaining')
-                continue
-            else:
-                print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining')
-               
-        while updated in countries_word:
-            
-            temp6 = updated
-            new6 = input('Please enter your next letter: ')
-            also_in_word5 = new 
-            if new6 == updated:
-                print('correct!')
-                countries_word_updated = empty_countries.replace(' ', also_in_word5)
-                empty_countries.append(countries_word_updated)
-                print(empty_countries)
-                print('Sorry, you are out of guesses!')
-            else:
-                print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining')
+                    print('Sorry, wrong guess! The left arm has been drawn! You have 4 attempts remaining')
+                print('Sorry, wrong guess! The right arm has been drawn! You have 1 attempts remaining')                                           
                 
-                                 
-            break                            
-
-                                        
-                        
-                           
-                         
-                       
-                
+            print('Sorry, wrong guess! The body has been drawn! You have 4 attempts remaining')
             
-            # while letter in countries_word
-            #     print('Please choose another letter: ')
-            #     while letter in countries_word:
-            #         print('correct!')
-            # print('Sorry, wrong guess!')
+            
+        print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining')
         
-
-
-        #print('Sorry, wrong guess! The head has been drawn! You have 5 attempts remaining')
-    return countries_choice
+        
+            
+        return countries_choice
 hangman()
 
 
@@ -209,6 +147,9 @@ hangman()
 
 #1/9 - 22:10 - "raw_input was called, but this frontend does not support input requests." - on Jupyter
 #working for first input, need a different loop
+
+# 1/10 - 21:05 - else temp in countries_list:SyntaxError: invalid syntax
+# using else wrong or wrong variables
 	
 
 
